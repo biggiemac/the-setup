@@ -27,17 +27,17 @@ brew update
 
 # BREW_INSTALL_SET
 BREW_INSTALL_SET=(
-  git
   ansible
+  git
+  mas
+  mtr
   npm
   telnet
-  mas
-  zsh
-  wget
-  mtr
   terraform
-  zsh-completions
+  wget
   yarn
+  zsh
+  zsh-completions
 )
 
 # Install Brew native packages, some have to be casks
