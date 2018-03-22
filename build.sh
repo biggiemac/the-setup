@@ -2,6 +2,8 @@
 #
 # Referenced from https://gist.github.com/codeinthehole/26b37efa67041e1307db
 #
+# Last update: March 2018
+#
 # Let us begin
 echo "Starting Build, you will be promted for your password, stay attentive..."
 
@@ -77,6 +79,11 @@ CASK_INSTALL_SET=(
 # Install Casks
 echo "Installing Cask Apps..."
 brew cask install ${CASK_INSTALL_SET[@]}
+
+# Install composer
+# Note - As of March 2018, there is no vanilla brew pacakge for composer
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # Install ohmyzsh, cuz...
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
